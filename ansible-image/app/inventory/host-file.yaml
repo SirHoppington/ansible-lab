@@ -1,25 +1,15 @@
-
 ---
 
-routers:
+iosxe-routers:
   hosts:
-  ios-xe-router-2:
-    hostname: 10.0.0.111
-    groups:
-      - ios
-      - prod
-  ios-xe-router-1:
-    hostname: 10.0.0.110
-    groups:
-      - ios
-      - prod
-  dev-ios-xe-router-2:
-    hostname: 10.0.0.211
-    groups:
-      - ios
-      - dev
-  dev-ios-xe-router-1:
-    hostname: 10.0.0.210
-    groups:
-      - ios
-      - dev
+    ios-xe-router-2:
+      ansible_host: 10.0.0.111
+
+    ios-xe-router-1:
+      ansible_host: 10.0.0.110
+
+    dev-ios-xe-router-2:
+      ansible_host: 10.0.0.211
+
+    dev-ios-xe-router-1:
+      ansible_host: 10.0.0.210

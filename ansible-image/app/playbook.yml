@@ -1,0 +1,25 @@
+---
+
+- name: Cisco show version tests
+  hosts: iosxe-routers
+  gather_facts: false
+
+  tasks:
+    - name: Run show version on router
+      ios_command:
+        commands: show version
+      register: output
+
+    - name: Run show run on router
+      ios_command:
+        commands: show run
+      register: output
+
+    - name: print output
+      debug:
+        var: output.stdout_lines
+
+    - name: save output to file
+      copy:
+        content: "{{output.stdout[0]}}"
+        dest: "./config_output/output-{{inventory_hostname}}.txt"
